@@ -1,0 +1,28 @@
+.main_container{
+    font-family: 'LemonMilk', sans-serif;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 20px;
+    right: 20px;
+    top: 20px;
+    background-color: #A7F1D9;
+    border-radius: 35px; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+}
+
+.main_container p{
+    color: #0C098C;
+    font-size: 12px;
+    padding-right: 1vw;
+}
+
+.main_container:hover{
+    padding-left: 50px;
+    box-shadow: none;
+    border-radius: 0;
+    clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 0 50%);
+}

@@ -1,0 +1,42 @@
+.contact_container{
+    font-size: 12px;
+    font-family: 'LemonMilk', sans-serif;
+    position: fixed; /* Fixes the position on the screen */
+    bottom: 20px; /* Distance from the bottom edge */
+    right: 20px; /* Distance from the right edge */
+    background-color: #003B2D; /* Example background color */
+    color: white; /* Text color */
+    padding: 5px 20px; /* Padding inside the div */
+    border-radius: 35px; /* Optional: Rounded corners */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+}
+
+.link{
+    margin: 5px 5px;
+    padding: 0 0;
+}
+
+.link img{
+    height: 30px;
+}
+
+.link:hover{
+    margin: 3px 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.link:hover img{
+    height: 32px;
+}
