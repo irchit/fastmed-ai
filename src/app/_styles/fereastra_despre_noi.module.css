@@ -49,15 +49,22 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
     font-size: 18px;
     margin: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.persoana:hover{
+    transform: translateY(7px);
+    border-radius: 15px;
 }
 
 .persoana p{
     color:rgb(0, 37, 43);
     font-size: small;
 }
+
 .persoana span{
     color:rgba(0, 37, 43, 0.813);
-    font-size: small;
+    font-size: smaller;
 }
 
 .persoana a{
