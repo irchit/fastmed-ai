@@ -13,3 +13,26 @@ body{
   justify-content: center;
   min-height: 90vh;
 }
+
+/* Apply styles to the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #007056; /* Light gray background */
+  border-radius: 0; /* Rounded corners */
+}
+
+/* Handle (scrollbar thumb) */
+::-webkit-scrollbar-thumb {
+  background: #003B2D; /* Darker gray handle */
+  border-radius:  0; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Even darker gray on hover */
+}

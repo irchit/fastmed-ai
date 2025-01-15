@@ -1,0 +1,104 @@
+.main_container{
+    display: flex;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'LemonMilk', sans-serif;
+    color: white;
+    padding: 3vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00665E;
+    border-radius: 35px;
+    width: 45vw;
+    max-height: 65vh;
+    min-height: 65vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease-in-out;
+}
+
+.main_container h1{
+    margin-bottom: 30px;
+    filter: drop-shadow(6px 6px 5px #00000094);
+}
+
+.back{
+    margin-bottom: 30px;
+    background-color: #A7F1D9;
+    color: #003B2D;
+    padding: 5px 30px;
+    border-radius: 35px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.back:hover{
+    opacity: 80%;
+    text-decoration: underline;
+    border-radius: 5px;
+}
+
+.question_container{
+    background-color: #003B2D;
+    border-radius: 35px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 15px 3px;
+    padding: 2vh 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width:100%;
+}
+
+.question_container:nth-child(even){
+    background-color: #007056;
+}
+
+.question_container label{
+    font-size: 14px;
+}
+
+.question_container textarea{
+    font-size: 14px;
+    width: 100%;
+    height: 7vh;
+    align-self: center;
+}
+
+.formular p{
+    font-size: 10px;
+    color:#021712;
+}
+
+.formular{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: scroll;
+    background-color: #A7F1D9;
+    padding: 10px 20px;
+    border-radius: 35px 0 0 35px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.formular input[type="submit"] {
+    font-family: LemonMilk, sans-serif;
+    border: none;
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: #003B2D;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.formular input[type="submit"]:hover{
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7);
+    background-color: #007056;
+}
