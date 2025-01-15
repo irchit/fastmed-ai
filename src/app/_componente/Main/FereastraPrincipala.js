@@ -1,9 +1,9 @@
 import styles from "@/app/_styles/fereastra_prinicpala.module.css"
 import ButonLinkMain from "./ButonLinkMain"
 
-export default function FereastraPrincipala () {
+export default function FereastraPrincipala ({id}) {
     return (
-        <div className={styles.main_container}>
+        <div id={id} className={styles.main_container}>
             <div className={styles.first_container}>
                 <div className={styles.line_container} style={{ transform: `translateY(${20}px)`}}>
                     <img src="lineDot.png"/>
@@ -35,16 +35,28 @@ export default function FereastraPrincipala () {
                     text = "Despre AI"
                     image = "\despreAI.png"
                     color = "#CFFFEF"
+                    open_id = "despreai"
+                    hide_id = {id}
+                    direction = "x"
+                    transform = {100}
                 />
                 <ButonLinkMain
                     text = "Parteneri"
                     image = "\parteneriICO.png"
                     color= "#CFF9FF"
+                    open_id = "parteneri"
+                    hide_id = {id}
+                    direction = "y"
+                    transform = {-100}
                 />
                 <ButonLinkMain
-                    text = "Despre Noi"
+                    text = "Echipa Noastră"
                     image = "\noi.png"
                     color = "#A7F1D9"
+                    open_id = "desprenoi"
+                    hide_id = {id}
+                    direction = "x"
+                    transform = {-100}
                 />
             </div>
         </div>

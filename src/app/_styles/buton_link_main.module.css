@@ -1,4 +1,5 @@
 .buton{
+    text-align: center;
     color: #0C098C;
     display: flex;
     flex-direction: column;
