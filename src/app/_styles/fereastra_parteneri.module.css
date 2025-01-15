@@ -24,6 +24,23 @@
     filter: drop-shadow(6px 6px 5px #00000094);
 }
 
+.main_container a{
+    color:#A7F1D9;
+}
+
+.nagarro a:hover{
+    color:#003927;
+    text-decoration: underline;
+}
+.nagarro a{
+    color:#00110c;
+}
+
+.main_container a:hover{
+    color:#2e9a78;
+    text-decoration: underline;
+}
+
 .back{
     margin-bottom: 30px;
     background-color: #A7F1D9;
@@ -38,4 +55,49 @@
     opacity: 80%;
     text-decoration: underline;
     border-radius: 5px;
+}
+
+.introduction{
+    text-align: center;
+}
+
+.nagarro{
+    margin: 1vh 0;
+    padding: 1vh 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #A7F1D9;
+    color:#011f18;
+    border-radius: 35px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ubb{
+    text-align: end;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.img{
+    text-align: end;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.text{
+    padding: 5px;
+}
+
+.img img{
+    border-radius: 35px;
+    height: 15vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
