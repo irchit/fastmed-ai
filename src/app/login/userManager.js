@@ -25,6 +25,7 @@ export async function decrypt(input) {
 const fetchUser = async (username) => {
     try {
         const response = await axios.get(url + '/' + username);
+        console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error fetching user:', error);
@@ -69,13 +70,15 @@ export async function login(formData) {
         return "invalid data";
     } 
 
-    if (foundUser.password !== formData.get("password"))
+    if (foundUser.parola !== formData.get("password"))
     {
         return "invalid data";
     }
 
+    console.log("miau")
   // Create the session
   const expires = new Date(Date.now() + 100000 * 1000);
+  console.log(foundUser.data)
   const session = await encrypt({ foundUser, expires });
 
   // Save the session in a cookie

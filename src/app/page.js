@@ -7,13 +7,18 @@ import FereastraDespreNoi from "./_componente/DespreNoi/FereastraDespreNoi";
 import FereastraParteneri from "./_componente/Parteneri/FereastraParteneri";
 import Trademark from "./_componente/Const/Trademark";
 import FereastraDiagnostic from "./_componente/Diagnostic/FereastraDiagnostic";
+import { getSession } from "./login/userManager";
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await getSession();
+
   return (
     <div>
       <AuthUserPanel />
       <FereastraDiagnostic
         id = "diagnostic"
+        session = {session}
       />
       <FereastraPrincipala 
         id = "main"

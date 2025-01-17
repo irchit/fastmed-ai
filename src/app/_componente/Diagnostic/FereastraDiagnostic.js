@@ -4,13 +4,22 @@ import styles from "@/app/_styles/fereastra_diagnostic.module.css"
 import Intrebare from "./Intrebare";
 import { useState, useEffect } from "react";
 import MedicalUnitFinder from "./MedicalUnitFinder";
+import axios from "axios";
 
 
-export default function FereastraDiagnostic({id}) {
+export default function FereastraDiagnostic({id, session}) {
     
     const [responses, setResponses] = useState({});
     const [result, setResult] = useState(null);
     const [jsonResult, setData] = useState([]);
+
+    var nume = "";
+    var username = "";
+
+    if (session){
+        nume = session.foundUser.nume + " " + session.foundUser.prenume;
+        username = session.foundUser.nume_utilizator;
+    }
 
   useEffect(() => {
     // Fetch the JSON file from the public directory
@@ -35,6 +44,30 @@ export default function FereastraDiagnostic({id}) {
         });
         const data = await res.json();
         setResult(data);
+
+        const responseDB = {
+            u_id: session.foundUser.u_id,
+            q1: responses.question_0,
+            q2: responses.question_1,
+            q3: responses.question_2,
+            q4: responses.question_3,
+            q5: responses.question_4,
+            q6: responses.question_5,
+            q7: responses.question_6,
+            q8: responses.question_7,
+            q9: responses.question_8,
+            q10: responses.question_9,
+            submission_date: Date.now(),
+            recommandation: data.recommendation,
+            severity: data.severity
+        }
+        try{
+            const response = await axios.post('http://localhost:8080/raspuns', responseDB);
+            console.log("added!");
+        } catch(err) {
+            console.error('Error adding raspunsuri:', error);
+        }
+
     };
         
     const questions = [    
@@ -99,7 +132,7 @@ export default function FereastraDiagnostic({id}) {
                     </div>
                     : 
                     <div className={styles.formular}>
-                        <p>Acest formular nu va fi salvat deoarece nu sunteti conectat.</p>
+                        <p>{session ? `Acest formular va fi salvat pentru utilizatorul ${username}` : "Acest formular nu va fi salvat deoarece nu sunteti conectat."}</p>
                         <form onSubmit={handleSubmit}>
                             {
                                 questions.map((q, index) => {

@@ -1,5 +1,8 @@
 import styles from "@/app/login/_styles/fereastra_principala.module.css"
-import { getSession, login, register } from "../userManager";
+import { getSession, login, logout, register } from "../userManager";
+import { redirect } from "next/navigation";
+import Istoric from "./Istoric";
+
 
 export default async function FereastraPrincipala(){
 
@@ -16,9 +19,19 @@ export default async function FereastraPrincipala(){
                     </a>
                     <h1>FastMed.AI</h1>
                 </div>
-                <div>
-                    Logged in as {session.nume_utilizator}
-                </div>
+                <form
+                    action={async () => {
+                        "use server";
+                        await logout();
+                        redirect("/");
+                    }}
+                >
+                    <button className={styles.back}>Log Out</button>
+                </form>
+                <h3>Istoric Prompt-uri</h3>
+                <Istoric
+                    session={session}
+                />
             </div>
         );
     }
@@ -38,8 +51,9 @@ export default async function FereastraPrincipala(){
                     action={async (formData) => {
                         "use server";
                         var response = await login(formData);
-                        if(response === "loggedin")
-                          redirect("/login");
+                        console.log(response);
+                        if (response === "loggedin")
+                            redirect("/login");
                       }}
                 >
                     <div>
@@ -48,7 +62,7 @@ export default async function FereastraPrincipala(){
                     <div>
                         <label>Parola: </label><input id="password" name="password" type="password"/>
                     </div>
-                    <input className={styles.submit} type="submit" value="Autentificare"/>
+                    <button className={styles.submit} type="submit">Autentificare</button>
                 </form>
             </div>
             <div className={styles.register}>
@@ -58,7 +72,7 @@ export default async function FereastraPrincipala(){
                         "use server";
                         var response = await register(formData);
                         if(response === "loggedin")
-                        redirect("/login");
+                            redirect("/login");
                     }}
                 >
                     <div>
@@ -68,10 +82,10 @@ export default async function FereastraPrincipala(){
                         <label>Prenume: </label><input  id="prenume" name="prenume" type="text"/>
                     </div>
                     <div>
-                        <label>Nume utilizator: </label><input  id="username" name="username" type="text"/>
+                        <label>Nume utilizator: </label><input  id="username_register" name="username" type="text"/>
                     </div>
                     <div>
-                        <label>Parola: </label><input id="password" name="password"  type="password"/>
+                        <label>Parola: </label><input id="password_register" name="password"  type="password"/>
                     </div>
                     <div className={styles.radio_gender}>
                         <label>Gen: </label>

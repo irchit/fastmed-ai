@@ -1,11 +1,26 @@
 import styles from "@/app/_styles/auth.module.css"
+import { getSession } from "@/app/login/userManager";
 
-export default function AuthUserPanel(){
-    var is_logged = false;
+
+
+export default async function AuthUserPanel(){
+
+
+    const session = await getSession();
+
+    var nume = "";
+    var username = "";
+
+    if (session){
+        nume = session.foundUser.nume + " " + session.foundUser.prenume;
+        username = session.foundUser.nume_utilizator;
+    }
+
+    
     return(
         <a href="./login">
             <div className={styles.main_container}>
-                <p>{is_logged ? "0A000001" : "Autentificare"}</p>
+                <p>{session ? `${nume} | ${username}` : "Autentificare"}</p>
                 <img src="/user.png"/>
             </div>
         </a>
